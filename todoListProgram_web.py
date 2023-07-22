@@ -1,6 +1,7 @@
 import streamlit as st
 import todoListProgram_functions
 
+st.set_page_config(layout="wide")
 todos_list = todoListProgram_functions.get_todos()
 
 
@@ -12,7 +13,7 @@ def add_todo():
 
 st.title("My Todo App")
 st.subheader("This is my todo app")
-st.write("This app is to increase your productivity")
+st.write("This app is to increase your <b>productivity</b>", unsafe_allow_html=True)
 
 for index, todo in enumerate(todos_list):
     checkbox = st.checkbox(todo, key=todo)
